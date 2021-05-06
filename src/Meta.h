@@ -117,6 +117,11 @@ enum QueryType {
   Q12,  // NEAR_NEAR_5_CLIQUE
   Q13,  // TRIANGLE_IN_DIAMOND
 
+  //self
+  Q14,
+  Q15,
+  Q16,
+
   kQueryType,
   // one line with two vertices, for partitioner
   // only for preprocess partitioning, not for query pattern

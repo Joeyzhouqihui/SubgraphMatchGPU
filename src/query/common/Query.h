@@ -81,6 +81,46 @@ class Query {
     }
   }
 
+  void Q15Query() {
+    vertex_count_ = 5;
+
+    con_.resize(vertex_count_);
+    con_[0].push_back(1);
+    con_[0].push_back(2);
+    con_[0].push_back(3);
+    con_[1].push_back(0);
+    con_[1].push_back(2);
+    con_[1].push_back(3);
+    con_[2].push_back(0);
+    con_[2].push_back(1);
+    con_[2].push_back(3);
+    con_[2].push_back(4);
+    con_[3].push_back(0);
+    con_[3].push_back(1);
+    con_[3].push_back(2);
+    con_[4].push_back(2);
+
+    order_.resize(vertex_count_);
+    order_[1].push_back(std::make_pair(LESS_THAN, 3));
+    order_[3].push_back(std::make_pair(LARGER_THAN, 1));
+  }
+  void Q14Query() {
+    vertex_count_ = 4;
+
+    con_.resize(vertex_count_);
+    con_[0].push_back(1);
+    con_[0].push_back(2);
+    con_[1].push_back(0);
+    con_[1].push_back(2);
+    con_[2].push_back(0);
+    con_[2].push_back(1);
+    con_[2].push_back(3);
+    con_[3].push_back(2);
+
+    order_.resize(vertex_count_);
+    order_[0].push_back(std::make_pair(LESS_THAN, 1));
+    order_[1].push_back(std::make_pair(LARGER_THAN, 0));
+  }
   void Q0Query() {
     vertex_count_ = 3;
 
