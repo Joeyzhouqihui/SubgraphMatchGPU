@@ -40,6 +40,10 @@ class Query {
       Q12Query();
     } else if (query_type_ == Q13) {
       Q13Query();
+    } else if (query_type_ == Q14) {
+      Q14Query();
+    } else if (query_type_ == Q15) {
+      Q15Query();
     } else if (query_type_ == LINE) {
       // for preprocessing edge weight
       // do nothing here
