@@ -24,7 +24,7 @@ class LazyTraversalPlan : public TraversalPlan {
     } else {
       intra_plan_compress_level_ = inter_plan_compress_level_ = compress_level;
     }
-    LazyTraversalPlanHardcode::GenerateSearchSequence(seq_, query_);
+    //LazyTraversalPlanHardcode::GenerateSearchSequence(seq_, query_);
     GenConstraints();
   }
 
