@@ -56,7 +56,7 @@ class HybridGpsmPipelineGPUComponent : public HybridGPUComponent {
     im_data_.resize(plan_->GetDevPartitionNum());
     im_data_holder_.resize(plan_->GetDevPartitionNum());
     std::cout<<"dev partition num : "<<(plan_->GetDevPartitionNum())<<std::endl;
-    for (size_t dev_id = 0; dev_id < plan_->GetDevPartitionNum(); ++dev_id) {
+    for (size_t dev_id = 1; dev_id < plan_->GetDevPartitionNum(); ++dev_id) {
       CUDA_ERROR(cudaSetDevice(dev_id));
       dev_plans_[dev_id] = new DevTraversalPlan(plan_, cuda_contexts_[dev_id]);
       im_data_[dev_id] = new ImData(plan_);
