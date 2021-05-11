@@ -120,6 +120,8 @@ enum QueryType {
   //self
   Q14,
   Q15,
+  Q16,
+  Q17,
 
   kQueryType,
   // one line with two vertices, for partitioner
