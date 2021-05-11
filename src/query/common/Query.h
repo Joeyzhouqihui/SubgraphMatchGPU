@@ -44,6 +44,10 @@ class Query {
       Q14Query();
     } else if (query_type_ == Q15) {
       Q15Query();
+    } else if (query_type_ == Q16) {
+      Q16Query();
+    } else if (query_type_ == Q17) {
+      Q17Query();
     } else if (query_type_ == LINE) {
       // for preprocessing edge weight
       // do nothing here
@@ -85,6 +89,54 @@ class Query {
     }
   }
 
+  void Q17Query() {
+    vertex_count_ = 7;
+    con_.resize(vertex_count_);
+    for (uintV i = 0; i < 6; ++i) {
+      for (uintV j = 0; j < 6; ++j) {
+        if (j != i) {
+          con_[i].push_back(j);
+        }
+      }
+    }
+    con_[5].push_back(6);
+    con_[6].push_back(5);
+    order_.resize(vertex_count_);
+    order_[0].push_back(std::make_pair(LESS_THAN, 4));
+    order_[4].push_back(std::make_pair(LARGER_THAN, 0));
+  }
+
+  void Q16Query() {
+    vertex_count_ = 6;
+
+    con_.resize(vertex_count_);
+    con_[0].push_back(1);
+    con_[0].push_back(2);
+    con_[0].push_back(3);
+    con_[0].push_back(4);
+    con_[1].push_back(0);
+    con_[1].push_back(2);
+    con_[1].push_back(3);
+    con_[1].push_back(4);
+    con_[2].push_back(0);
+    con_[2].push_back(1);
+    con_[2].push_back(3);
+    con_[2].push_back(4);
+    con_[3].push_back(0);
+    con_[3].push_back(1);
+    con_[3].push_back(2);
+    con_[3].push_back(4);
+    con_[4].push_back(0);
+    con_[4].push_back(1);
+    con_[4].push_back(2);
+    con_[4].push_back(3);
+    con_[4].push_back(5);
+    con_[5].push_back(4);
+
+    order_.resize(vertex_count_);
+    order_[0].push_back(std::make_pair(LESS_THAN, 3));
+    order_[3].push_back(std::make_pair(LARGER_THAN, 0));
+  }
   void Q15Query() {
     vertex_count_ = 5;
 

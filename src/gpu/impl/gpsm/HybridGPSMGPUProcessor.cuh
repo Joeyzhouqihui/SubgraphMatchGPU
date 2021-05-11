@@ -117,7 +117,7 @@ class HybridGPSMGPUProcessor : public HybridGPUProcessor {
 
   virtual void EstimateMemoryCost(uintV cur_level, size_t& parent_factor,
                                   size_t& children_factor) {
-    // children_count+ children_offsets
+    // children_count + children_offsets
     parent_factor = sizeof(size_t) * 2;
     // instances in the levels [0,cur_level]
     // + parents_indices
